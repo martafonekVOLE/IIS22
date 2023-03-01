@@ -1,0 +1,425 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #ffffff; /* #c1bdba */
+  font-family: 'Titillium Web', sans-serif;
+}
+body{
+  background-image: url(../others/gym2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+
+.form {
+  background: rgba(19, 35, 47, 0.97);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.maxForm{
+  max-width: 95%;
+  height: 95%;
+}
+.backArrow{
+  max-width: 50px;
+}
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #1ab188;
+  color: #ffffff;
+}
+.listOfUsers{
+  color: #fff;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  border: 1px solid;
+  border-color: #fff;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: center;
+}
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+h2 {
+    text-align: center;
+    color: #1ab188;
+    font-weight: 1000;
+    margin: 0;
+}
+
+span {
+    color: #1ab188;
+    font-weight: bold;
+}
+
+p {
+    text-align: center;
+    color: #ffffff;
+    margin: 0px 0px 50px 0px;
+}
+.profileInfo{
+  text-align: center;
+}
+.profilePhoto{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+div .info {
+    padding: 5px;
+    margin-bottom: 10px;
+    color: pink;
+    display: border-box;
+    text-align: center;
+    border: 1px solid red;
+    background: #66131c;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+label.active {
+  transform: translateY(10px);
+  transform: translateX(10px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 80px;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+.userCol{
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+.selectLabel{
+  position: relative;
+  margin-right: 20px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+.searchMe{
+}
+.searchbar{
+  max-width: 80%;
+}
+.searchbar input[type=radio]{
+  height: 30px;
+}
+.searchbar .field-wrap{
+  margin: auto;
+  width: 80%;
+}
+.searchbarField{
+  width: 30%;
+}
+.listOfUsersTable{
+  width: 100%;
+}
+.listOfUsersTable td, th{
+  width: 20%;
+}
+.listOfUsersTableInit{
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  color: #000;
+};
+.listOfUsersTable td:nth-child(4), td:nth-child(5){
+  cursor: pointer;
+}
+.listOfUsersTable td .reduced{
+  width: 100%;
+}
+.errMsg{
+  color: darkred;
+  text-align: center;
+}
+.listOfColors td{
+  background-color: transparent;
+  border: 1px solid;
+  border-left: none;
+  border-right: none;
+  border-color: white;
+}
+.listOfColors td:first-child{
+  text-align: center;
+  width: 15%;
+}
+.listOfColors td:nth-child(2){
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  width: 70%;
+}
+.listOfColors td:nth-child(3){
+  text-align: center;
+  width: 15%;
+}
+.dropdownColor{
+  width: 100%;
+}
+
+/*Select style*/
+.form select{
+  background-color: #1ab188;
+  height: 50px;
+  margin-top: 20px;
+}
+.colorInput{
+  margin-top: 3px;
+  height: 50px;
+}
+.colorInput :after{
+  content: 'Lesson name/shortcut';
+}
+.smallTransparentButton{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+.newCustomer{
+  position: absolute;
+  cursor: pointer;
+}
+.newCustomerImg {
+  border-radius: 50%;
+}
+.listOfLectures{
+  color: #fff;
+}
+.listOfLectures table{
+  width: 100%;
+  text-align: center;
+}
+.listOfLectures td th{
+  width: 20%;
+}
+.listOfLectures td:nth-child(5){
+  cursor: pointer;
+}
+.listOfLectures td:nth-child(5) button{
+  width: 100%;
+  height: 100%;
+  background-color: #1ab188;
+  border: none;
+  color: #fff;
+}
+.listOfLectures a{
+  text-decoration: none;
+  color: #1ab188;
+}
+.roomTable{
+  width: 100%;
+
+}
+.roomTable td:nth-child(1){
+  width: 60%;
+}
+.roomTable td:nth-child(2){
+  text-align: center;
+  width: 20%;
+  background-color: #1ab188;
+}
+.roomTable td:nth-child(3){
+  text-align: center;
+  width: 20%;
+  background-color: red;
+}
+.roomTable button{
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.roomTable button:hover{
+  background-color: transparent;
+}
+
+.red{
+  background-color: red;
+}
+.blue{
+  background-color: blue;
+}
+.green{
+  background-color: green;
+}
+.yellow{
+  background-color: yellow;
+}
+.purple{
+  background-color: purple;
+}
+.white{
+  background-color: white;
+}
+.grey{
+  background-color: grey;
+}
+.lime{
+  background-color: lime;
+}
+.orange{
+  background-color: orange;
+}
+
+/*Karty místností*/
+.room_image{
+  max-width: 300px;
+}
+
+.room-btns {
+  display:inline-block;
+  margin-right:5px;
+}

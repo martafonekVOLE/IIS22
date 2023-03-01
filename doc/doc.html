@@ -1,0 +1,86 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>IS pro Fitness centrum</title>
+<style type="text/css">
+    table { border-collapse: collapse; }
+    td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    dt { font-weight: bold; margin-top: 0.5em; }
+</style>
+</head>
+<body>
+
+<h1>IS pro Fitness centrum</h1>
+
+<dl>
+<dt>Autoři</dt>
+<dd>David Konečný
+    <a href="mailto:xkonec83@stud.fit.vutbr.cz">xkonec83@stud.fit.vutbr.cz</a> -
+    vedoucí týmu, administračná stránky pro zaměstnance, dokumentace, testování
+</dd>
+<dd>Matěj Konopík
+    <a href="mailto:xkonop03@stud.fit.vutbr.cz">xkonop03@stud.fit.vutbr.cz</a> - 
+    návrh databáze, stránky pro uživatele, ukládání obrázků na serveru, správa verzovacího systému
+</dd>
+<dd>Martin Pech
+    <a href="mailto:xpechm00@stud.fit.vutbr.cz">xpechm00@stud.fit.vutbr.cz</a> - 
+    tvorba rezervačního kalendáře, tvorba registračního systému, hlavní designer, úprava UI, práce s databází
+</dd>
+<dt>URL aplikace</dt>
+<dd><a href="https://mpech.net/IS">https://mpech.net/IS</a></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin@fitness.mpech.net</td><td>test</td><td>Administrátor</td></tr>
+<tr><td>martin@fitness.mpech.net</td><td>test</td><td>Zaměstnanec</td></tr>
+<tr><td>verifieduser@mpech.net</td><td>test</td><td>Zákazník/uživatel (ověřený)</td></tr>
+<tr><td>unverifieduser@mpech.net</td><td>test</td><td>Zákazník/uživatel (neověřený)</td></tr>
+<tr><td>testuser@mpech.net</td><td>test</td><td>Zákazník/uživatel (ověřený)</td></tr>
+</table>
+
+Pozn.: testuser@mpech.net má zaregistrované lekce a místnosti, narozdíl od ostatních uživatelů.
+
+
+<p><img src="use_case.svg" alt="Use case"></p> 
+
+<h3>Video</h3>
+
+<p><a href="https://youtu.be/72bNryF-vXQ">https://youtu.be/72bNryF-vXQ</a></p> 
+
+<h2>Implementace</h2>
+<p>
+Základem našeho informačního systému je aplikace, která zodpovídá za registrování a přihlašování uživatelů ke svým uživatelským účtům. Aby však tato aplikace fungovala, je potřeba nejprve inicializovat připojení k databázi. K tomu dochází v souboru <code>db.php</code>. Registrace (přihlášení) je realizována v souboru <code>login.php</code>. 
+Dále je volán příslušný skript pro registraci (<code>reigister.php</code>), nebo pro přihlášení (<code>loginUser.php</code>). Po přihlášení dojde k inicializaci sezení a přesměrování na hlavní stránku (<code>index.php</code>). Uživatel má možnost z hlavní stránky klinutím na svůj avatar přejít na svůj profil (<code>profile.php</code>), nebo procházet webové stránky fitness centra.
+V případě, že se dostane na svůj profil, může z něj realizovat různé operace, jako například správu profilu nebo zobrazení svých rezervací. V opačném případě může provádět interakci s kalendářem lekcí, nebo kalendářem místností. To platí jen v případě, že si předem uživatel ověřil svůj účet. To může provést kliknutím na odkaz v e-mailu, který mu byl zaslán při registraci. 
+Možnosti uživatele jsou rozšířené u profilu zaměstnance, který na rozdíl od uživatele může spravovat jednotlivé uživatele, jejich rezervace a účty (skripty <code>editLecturesAdmin.php</code>, <code>editUserLecturesAdmin.php</code>, <code>editUserProfileAdmin.php</code>) a místnosti (skripty <code>adminAddRoom.php</code>, <code>adminEditRoom.php</code> a <code>adminRoomDashboard.php</code>).
+Další významnou částí aplikace je onen rezervační kalendář. Ten je generovaný pro různé sekce IS jinak a je generovaný ze skriptu <code>calendar.php</code>. 
+</p>
+<p>
+Průběh dosavadní realizace byl konzultován s potenciálním klientem. Nejprve jsme společně probrali představu a následně jsme pravidelně konzultovali funkcionalitu systému. Původním požadavkem bylo zjednodušit práci obsluhy multifunkční sportovní haly, která doposud pro všechny aktivity využívá jeden kompletní IS, který ale není vytvořený na míru. Vhodný je například pro rezervace velké haly, ale nevyhovuje požadavkům pro fitness centrum, které je součástí areálu. Naším cílem tedy bylo vytvořit řešení pro tuto aktivitu. 
+</p>
+<p>
+IS není ve finální podobě a je stále ve vývoji. V rámci projektu do IIS jsme se snažili vytvořit stěžejní funkcionalitu doprovázenou ucházejícím designem. Do budoucna se do ISu budou integrovat další (méně důležité) funkce. V nejbližší době bude pro klienty s aktivovaným účtem umožněno odesílat e-maily přímo přes IS (obdobná funkce je již implementována v podobě automaticky generovaných e-mailů s ověřovacími klíči a design bude převzat z existujících webových stránek jednoho z autorů), role zaměstnanců v databázi budou hrát větší roli než nyní (např. recepční nebude moci vytvářet lekce), vznikne admin stránka pro správce, který bude moci provádět hromadné operace nad uživateli a přibude mnoho uživatelsky přívětivějších způsobů práce s IS. Dále zvažujeme možnost přidání uživatelova „finančního konta“, pro snazší správu uživatelů.
+V budoucnu bude možné všechny operace potvrzovat a nebude možné přihlášení na již uplynulé lekce.
+</p>
+
+<h3>Databáze</h3>
+
+<img src="er.svg" alt="ER diagram">
+
+<h2>Instalace</h2>
+
+<ul>
+    <li>Provozováno s PHP verze 8.0</li>
+    <li>Je nutné vytvořit databázi pomocí skriptu <code>accounts.sql</code> (MariaDB).</li>
+    <li>Všechny zdrojové soubory je nutné umístit do adresáře <code>WWW</code>.</li>
+    <li>Následně je nutné vyplnit přhlašovací údaje do souborů <code>db.php</code> a <code>mailHandler.php</code>.</li>
+    <li>Poté by již měl být IS funkční.</li>
+</ul>
+
+</body>
+</html>

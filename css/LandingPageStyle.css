@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    left: 0%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #e7e7e7;
+}
+.pageHeader{
+    overflow-x: hidden;
+    left:0%;
+    top:0%;
+    width: 100%;
+    height: 50vh;
+    background: url(../others/gym2.jpg) no-repeat bottom;
+    filter: invert(1%) sepia(40%) contrast(80%);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pageHeader h1{
+    width: auto;
+    margin-top: 10rem;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    filter: none;
+    font-size: 3.2em;
+    border: none;
+}
+.roundedAvatar{
+    position: absolute;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.roundedAvatar:hover{
+    cursor: pointer;
+}
+.roundedAvatar:hover + .roundedAvatarDetails {
+    transform: translateY(70%) scale(1);
+}
+.roundedAvatarDetails{
+    position: absolute;
+    transform: translateY(70%) scale(0);
+    transition: transform 0.1s ease-in;
+    transform-origin: left;
+    display: inline;
+    background: #e7e7e7;
+    z-index: 20;
+    width: 20%;
+    padding: 1rem;
+}
+.roundedAvatarDetails:hover{
+    transform: translateY(70%) scale(1);
+}
+.picture{
+    overflow-x: hidden;
+    z-index: 120;
+    position: relative;
+    background: url(../others/avatar.png) no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    height: 225px;
+    width: 225px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+.intro{
+    width: 100%;
+    position: absolute;
+    overflow-y: hidden;
+}
+.intro p{
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    left: 10%;
+}
+.aboutme{
+    font-size: 1.1em;
+}
+.firstSlide{
+      height: 100%;
+      overflow-y: hidden;
+}
+.calendarSpan{
+    padding: 5%;
+    padding-bottom: 0;
+}
+.bookRoomSpan{
+    padding: 5%;
+}
+.pink{
+      top: 153%;
+      left:0%;
+      position: absolute;
+      width: 100%;
+      background-color: rgb(250, 211, 218);
+      min-height: 140%;
+      overflow-y: hidden;
+      box-sizing: border-box;
+}
+.pink h2{
+    font-weight: 500;
+    font-size: 3em;
+    text-align: center;
+    color: #000;
+    filter: none;
+    border: none;
+}
+.pink h3{
+    margin-top: +6rem;
+    font-weight: 300;
+    font-size: 2.4em;
+    text-align: center;
+    margin-bottom: -.5rem;
+}
+  .column {
+    float: left;
+    width: 40%;
+    padding: 10px;
+  }
+  .column p{
+      margin-bottom: -.6rem;
+  }
+  .column p span{
+      float: right;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .center{
+    position: relative;
+    text-align: center;
+  }
+  a{
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(250, 211, 218);
+    background-color: #000;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #e7e7e7;
+}
+  
+.navbar a {
+    border: none;
+    margin: 0;
+    float: right;
+    color: #333;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 14px;
+}
+  
+.navbar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+  
+.navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+.colorColumn{
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+.colorPalette{
+    list-style: none;
+    display: inline;
+}
+.colorLi{
+    display: inline;
+}
+.colorBox{
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    margin-right: 15px;
+}
+.colorText{
+    float: left;
+    padding-right: 15px;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.purple{
+    background-color: purple;
+}
+.white{
+    background-color: white;
+}
+.grey{
+    background-color: grey;
+}
+.lime{
+    background-color: lime;
+}
+.orange{
+    background-color: orange;
+}
+
+/*Burger menu*/
+.burgerWrapper{
+    display: none;
+}
+.burger-check {
+    display: none;
+}
+.avatar{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.burger {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.burger:after {
+    position: absolute;
+    bottom: 7px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.burger span, .burger span:before, .burger span:after {
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    width: 40px;
+    height: 4px;
+    background: #333;
+    border-radius: 0.2em;
+    transition: all 0.3s;
+}
+
+.burger span:before, .burger span:after {
+    content: '';
+    left: 0;
+    transition: all 0.3s;
+}
+
+.burger span:before {
+    top: -8px;
+    transition: all 0.3s;
+}
+
+.burger span:after {
+    top: 8px;
+    transition: all 0.3s;
+}
+
+.burger:hover span{
+    background-color: transparent;
+}
+
+.burger:hover span::after{
+    transform: rotate(45deg);
+    top: 0px;
+    transition: all 0.3s;
+}
+
+.burger:hover span::before{
+    transform: rotate(-45deg);
+    top:0px;
+    transition: all 0.3s;
+}
+
+.burgerMenu {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    min-height: 0px;
+    background: transparent;
+    overflow: hidden;
+}
+
+.burgerMenu ul {
+    position: relative;
+    float: left;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.burgerMenu ul a {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 0;
+    line-height: 50px;
+    padding: 0 15px;
+    text-decoration: none;
+    overflow: hidden;
+    color: #333;
+    text-align: left;
+    border: none;
+}
+
+#menu:checked ~ ul a {
+    height: 50px;
+}
+@media (max-width: 1000px){
+    .colorPalette{
+        display: flex;
+    }
+}
+@media (max-width: 700px) {
+    .navbar{
+        display: none;
+    }
+    .burgerWrapper{
+        display: block;
+    }
+    .roundedAvatar{
+        position: absolute;
+        z-index: 100000;
+        margin-top: 20px;
+        margin-left: 20px;
+        scale: 135%;
+    }
+}
